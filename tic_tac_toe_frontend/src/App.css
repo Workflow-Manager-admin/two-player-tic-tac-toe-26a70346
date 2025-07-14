@@ -1,13 +1,16 @@
 /* CSS Variables for Theme Management */
 :root {
-  /* Light theme colors */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --text-primary: #282c34;
-  --text-secondary: #61dafb;
-  --border-color: #e9ecef;
-  --button-bg: #007bff;
-  --button-text: #ffffff;
+  /* Theme variables - project palette */
+  --primary: #1976d2;
+  --accent: #ff4081;
+  --secondary: #424242;
+  --bg-primary: #f7f8fa;
+  --bg-secondary: #fff;
+  --text-primary: #222627;
+  --text-secondary: #757575;
+  --border-color: #e3e6ea;
+  --button-bg: var(--primary);
+  --button-text: #fff;
 }
 
 [data-theme="dark"] {
@@ -101,4 +104,177 @@
     padding: 8px 16px;
     font-size: 12px;
   }
+  .ttt-board {
+    grid-template-columns: repeat(3, 56px);
+    grid-template-rows: repeat(3, 56px);
+    width: 178px;
+    height: 178px;
+  }
+  .ttt-square {
+    font-size: 2rem;
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    min-height: 56px;
+  }
+  .ttt-title {
+    font-size: 1.6rem;
+  }
+  .ttt-status {
+    font-size: 1.1rem;
+  }
+  .ttt-controls {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
 }
+
+/* --- Custom Tic Tac Toe Styles --- */
+.ttt-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 32px;
+  margin-bottom: 8px;
+}
+
+.ttt-title {
+  margin-bottom: 4px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.ttt-scores {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 12px;
+}
+.score-x {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+.score-o {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+.divider {
+  color: var(--secondary);
+  font-size: 1rem;
+  opacity: 0.5;
+}
+
+.ttt-controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.ttt-btn {
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 8px 22px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 1.5px 4px rgba(25, 118, 210, 0.07);
+  cursor: pointer;
+  transition: transform 0.09s, background-color 0.2s;
+}
+.ttt-btn:hover, .ttt-btn:focus {
+  background-color: var(--accent);
+  outline: none;
+  transform: translateY(-2px) scale(1.02);
+}
+.ttt-btn-small {
+  padding: 7px 13px !important;
+  font-size: 0.96rem;
+  background: var(--accent);
+}
+
+.ttt-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+  min-height: 380px;
+}
+.ttt-status {
+  font-size: 1.18rem;
+  margin-top: 4px;
+  margin-bottom: 14px;
+  text-shadow: 0px 1px 2px rgba(180,180,190,0.10);
+}
+.ttt-board {
+  display: grid;
+  grid-template-columns: repeat(3, 70px);
+  grid-template-rows: repeat(3, 70px);
+  gap: 6px;
+  margin: 0 auto 22px auto;
+  width: 224px;
+  height: 224px;
+  background: var(--bg-secondary);
+  box-shadow: 0 2px 14px rgba(25, 118, 210, 0.08),
+    0 1px 1px rgba(66,66,66,0.025);
+  border-radius: 14px;
+  padding: 12px 7px 12px 7px;
+}
+.ttt-square {
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  width: 66px;
+  height: 66px;
+  background: #fff;
+  color: var(--primary);
+  border: 2.2px solid var(--secondary);
+  border-radius: 9px;
+  cursor: pointer;
+  outline: none;
+  box-sizing: border-box;
+  transition: background 0.12s, color 0.09s, border 0.13s;
+  display: flex; align-items: center; justify-content: center;
+  /* subtle click animation */
+  will-change: transform;
+}
+.ttt-square:active {
+  background: #eceff1;
+  transform: scale(0.98);
+}
+.ttt-square:disabled {
+  background: #faf9fd;
+  color: var(--text-secondary);
+  cursor: not-allowed;
+  opacity: 0.88;
+}
+
+/* Footer styles */
+.ttt-footer {
+  margin-top: 22px;
+  text-align: center;
+  padding-bottom: 8px;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+.footer-text {
+  color: #777;
+  letter-spacing: 0.2px;
+}
+.ttt-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0 2px;
+  transition: color 0.18s;
+}
+.ttt-link:hover {
+  color: var(--accent);
+}
+
